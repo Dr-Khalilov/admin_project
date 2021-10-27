@@ -14,7 +14,7 @@ import { useMediaQuery } from '@material-ui/core';
 
 const postFilters = [
     <TextInput source='q' label='Search' alwaysOn />,
-    <ReferenceInput source='userId' label='User' reference='users' allowEmpty>
+    <ReferenceInput source='id' label='User' reference='users' allowEmpty>
         <SelectInput optionText='name' />
     </ReferenceInput>,
 ];
@@ -25,16 +25,17 @@ export const PostList = (props) => {
         <List filters={postFilters} {...props}>
             {
                 isSmall ? (
-                    <SimpleList primaryText={record => record.title}
-                                secondaryText={record => `${record.views} views`}
-                                tertiaryText={record => new Date(record.published_at).toLocaleDateString()} />
+                    <SimpleList primaryText={record => record.name}
+                                secondaryText={record => record.text}
+                                tertiaryText={record => record.tags} />
                 ) : (
                     <Datagrid>
                         <TextField source='id' />
-                        <ReferenceField label='User' reference='users' source='userId'>
+                        <ReferenceField label='User' reference='users' source='id'>
                             <TextField source='name' />
                         </ReferenceField>
-                        <TextField source='title' />
+                        <TextField source='text' />
+                        <TextField source='tags' />
                         <EditButton />
                     </Datagrid>
                 )}
