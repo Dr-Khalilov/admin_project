@@ -7,6 +7,7 @@
         "@testing-library/react": "^11.2.7",
         "@testing-library/user-event": "^12.8.3",
         "prop-types": "^15.7.2",
+        "query-string": "^7.0.1",
         "ra-data-json-server": "^3.19.0",
         "react": "^17.0.2",
         "react-admin": "^3.19.0",
@@ -21,14 +22,25 @@
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
-        "extends": ["react-app", "react-app/jest"]
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
     },
     "browserslist": {
-        "production": [">0.2%", "not dead", "not op_mini all"],
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
         "development": [
             "last 1 chrome version",
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@material-ui/core": "^4.12.3",
+        "@material-ui/icons": "^4.11.2"
     }
 }
