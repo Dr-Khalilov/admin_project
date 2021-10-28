@@ -1,18 +1,17 @@
-import { fetchUtils } from 'react-admin';
+import restProvider from 'ra-data-simple-rest';
+import { httpClient } from '../Auth';
+
+const { REACT_APP_API_URL } = process.env;
+
+export const dataProvider = restProvider(REACT_APP_API_URL, httpClient);
+
+
+/*
 import { stringify } from 'query-string';
 
-const apiUrl = 'http://192.168.88.254:3002';
-const httpClient = fetchUtils.fetchJson;
+const { REACT_APP_API_URL } = process.env;
 
-
-// const fetchJson = (url, options = {}) => {
-//     options.user = {
-//         authenticated: true,
-//         token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGdtYWlsLmNvbSIsImlkIjoiMjNhYjI3YTgtNTQ2Mi00OTAzLWE2MjYtNTI2MDhkNDJhZmFjIiwicm9sZXMiOlt7ImlkIjoiMGFhNDQ2NmEtYjYyMS00MTQxLWE4YjYtOTUxZTRkYzYwZmE1IiwiY3JlYXRlZF9hdCI6IjIwMjEtMDktMjNUMDk6MDg6NDQuNzg2WiIsInVwZGF0ZWRfYXQiOiIyMDIxLTA5LTIzVDA5OjA4OjQ0Ljc4NloiLCJuYW1lIjoidXNlciJ9XSwiaWF0IjoxNjM1MzMxMjU4LCJleHAiOjE2MzU0MTc2NTh9.kaNVkfZj8E5dfCJMt_kdf1O7LkdrvQYcWBZFqoyLNgE',
-//     };
-//     options.headers.set('content-range');
-//     return fetchUtils.fetchJson(url, options);
-// };
+const apiUrl = REACT_APP_API_URL;
 
 export const dataProvider = {
     getList: (resource, params) => {
@@ -91,3 +90,4 @@ export const dataProvider = {
     },
 
 };
+*/

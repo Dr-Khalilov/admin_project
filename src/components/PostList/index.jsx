@@ -1,20 +1,21 @@
-import React from 'react';
 import {
     List,
     Datagrid,
     ReferenceField,
     TextField,
     EditButton,
+    DeleteButton,
     TextInput,
     ReferenceInput,
     SelectInput,
     SimpleList,
+    DateField,
 } from 'react-admin';
 import { useMediaQuery } from '@material-ui/core';
 
 const postFilters = [
     <TextInput source='q' label='Search' alwaysOn />,
-    <ReferenceInput source='id' label='User' reference='users' allowEmpty>
+    <ReferenceInput source='id' label='User' reference='user' allowEmpty>
         <SelectInput optionText='name' />
     </ReferenceInput>,
 ];
@@ -27,16 +28,19 @@ export const PostList = (props) => {
                 isSmall ? (
                     <SimpleList primaryText={record => record.name}
                                 secondaryText={record => record.text}
-                                tertiaryText={record => record.tags} />
+                                tertiaryText={record => record.id} />
                 ) : (
                     <Datagrid>
                         <TextField source='id' />
-                        <ReferenceField label='User' reference='users' source='id'>
-                            <TextField source='name' />
-                        </ReferenceField>
+                        {/*<ReferenceField label='User' reference='users' source='id'>*/}
+                        {/*    <TextField source='name' />*/}
+                        {/*</ReferenceField>*/}
                         <TextField source='text' />
                         <TextField source='tags' />
-                        <EditButton />
+                        <DateField source='created_at' />
+                        <DateField source='updated_at' />
+                        <EditButton basePath='/posts' />
+                        <DeleteButton basePath='/posts' />
                     </Datagrid>
                 )}
         </List>
