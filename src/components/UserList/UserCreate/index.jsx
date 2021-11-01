@@ -6,6 +6,7 @@ export const UserCreate = props => (
             <TextInput source='name' />
             <TextInput source='email' />
             <TextInput source='password' />
+            <TextInput source='role' />
         </SimpleForm>
     </Create>
 );

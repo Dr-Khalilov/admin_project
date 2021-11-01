@@ -1,17 +1,7 @@
-import restProvider from 'ra-data-simple-rest';
 import { httpClient } from '../Auth';
-
-const { REACT_APP_API_URL } = process.env;
-
-export const dataProvider = restProvider(REACT_APP_API_URL, httpClient);
-
-
-/*
 import { stringify } from 'query-string';
 
-const { REACT_APP_API_URL } = process.env;
-
-const apiUrl = REACT_APP_API_URL;
+const { REACT_APP_API_URL: apiUrl } = process.env;
 
 export const dataProvider = {
     getList: (resource, params) => {
@@ -88,6 +78,4 @@ export const dataProvider = {
             method: 'DELETE',
         }).then(({ json }) => ({ data: json }));
     },
-
 };
-*/

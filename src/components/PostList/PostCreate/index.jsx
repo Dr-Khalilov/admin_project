@@ -1,11 +1,4 @@
-import {
-    Create,
-    SimpleForm,
-    ReferenceInput,
-    SelectInput,
-    TextInput,
-    DateInput,
-} from 'react-admin';
+import { Create, SimpleForm, TextInput } from 'react-admin';
 
 export const PostCreate = props => (
     <Create title='Create a Post' {...props}>

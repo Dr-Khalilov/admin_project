@@ -1,13 +1,10 @@
 import {
     List,
     Datagrid,
-    ReferenceField,
     TextField,
     EditButton,
     DeleteButton,
     TextInput,
-    ReferenceInput,
-    SelectInput,
     SimpleList,
     DateField,
 } from 'react-admin';
@@ -15,9 +12,7 @@ import { useMediaQuery } from '@material-ui/core';
 
 const postFilters = [
     <TextInput source='q' label='Search' alwaysOn />,
-    <ReferenceInput source='id' label='User' reference='user' allowEmpty>
-        <SelectInput optionText='name' />
-    </ReferenceInput>,
+    <TextInput label='Text' source='text' defaultValue='Hello, World!' />,
 ];
 
 export const PostList = (props) => {
@@ -32,7 +27,7 @@ export const PostList = (props) => {
                 ) : (
                     <Datagrid>
                         <TextField source='id' />
-                        <TextField source='text' />
+                        <TextField multiline source='text' />
                         <TextField source='tags' />
                         <DateField source='created_at' />
                         <DateField source='updated_at' />
