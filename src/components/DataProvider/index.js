@@ -1,8 +1,11 @@
+// import { stringify } from 'query-string';
 import { httpClient } from '../Auth';
-import { stringify } from 'query-string';
+import restProvider from 'ra-data-simple-rest';
 
-const { REACT_APP_API_URL: apiUrl } = process.env;
+const { REACT_APP_API_URL } = process.env;
 
+export const dataProvider = restProvider(REACT_APP_API_URL, httpClient);
+/*
 export const dataProvider = {
     getList: (resource, params) => {
         const { page, perPage } = params.pagination;
@@ -79,3 +82,4 @@ export const dataProvider = {
         }).then(({ json }) => ({ data: json }));
     },
 };
+*/
