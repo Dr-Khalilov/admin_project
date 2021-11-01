@@ -13,7 +13,7 @@ export const httpClient = (url, options = {}) => {
 
 export const authProvider = {
     login: ({ username, password }) => {
-        const request = new Request(REACT_APP_API_URL + '/auth/login',
+        const request = new Request(`${REACT_APP_API_URL}/auth/login`,
             {
                 method: 'POST',
                 body: JSON.stringify({ email: username, password }),

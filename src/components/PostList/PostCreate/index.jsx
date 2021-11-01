@@ -10,9 +10,6 @@ import {
 export const PostCreate = props => (
     <Create title='Create a Post' {...props}>
         <SimpleForm>
-            {/*<ReferenceInput source='id' reference='user'>*/}
-            {/*    <SelectInput optionText='name' />*/}
-            {/*</ReferenceInput>*/}
             <TextInput multiline source='text' />
             <TextInput multiline source='tags' />
         </SimpleForm>
