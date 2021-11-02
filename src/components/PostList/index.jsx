@@ -7,6 +7,8 @@ import {
     TextInput,
     SimpleList,
     DateField,
+    ArrayField, ChipField,
+    SingleFieldList, ReferenceArrayField,
 } from 'react-admin';
 import { useMediaQuery } from '@material-ui/core';
 
@@ -15,10 +17,13 @@ const postFilters = [
     <TextInput label='Text' source='text' defaultValue='Hello, World!' />,
 ];
 
+
 export const PostList = (props) => {
     const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
+
     return (
         <List filters={postFilters} {...props}>
+
             {
                 isSmall ? (
                     <SimpleList primaryText={record => record.name}
@@ -28,7 +33,11 @@ export const PostList = (props) => {
                     <Datagrid>
                         <TextField source='id' />
                         <TextField multiline source='text' />
-                        <TextField source='tags' />
+                        <ArrayField source='tags'>
+                            <SingleFieldList>
+                                <ChipField source='name' />
+                            </SingleFieldList>
+                        </ArrayField>
                         <DateField source='created_at' />
                         <DateField source='updated_at' />
                         <EditButton basePath='/posts' />

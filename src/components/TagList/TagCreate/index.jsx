@@ -7,7 +7,7 @@ import {
 export const TagCreate = props => (
     <Create title='Create tags' {...props}>
         <SimpleForm>
-            <TextInput multiline source='name' />
+            <TextInput source='name' />
         </SimpleForm>
     </Create>
 );

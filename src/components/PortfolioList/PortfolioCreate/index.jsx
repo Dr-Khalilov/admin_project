@@ -7,7 +7,7 @@ import {
 export const PortfolioCreate = props => (
     <Create title='Create a portfolio' {...props}>
         <SimpleForm>
-            <TextInput multiline source='text' />
+            <TextInput multiline type='text' resettable source='text' />
         </SimpleForm>
     </Create>
 );

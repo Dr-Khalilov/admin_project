@@ -12,7 +12,7 @@ export const ContactList = (props) => (
         <Datagrid>
             <TextField source='id' />
             <TextField source='name' />
-            <TextField source='phone' />
+            <TextField  source='phone' />
             <EmailField source='email' />
             <TextField multiline source='message' />
             <DateField source='created_at' />

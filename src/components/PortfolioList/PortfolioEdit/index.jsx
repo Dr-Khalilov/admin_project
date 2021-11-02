@@ -10,7 +10,7 @@ export const PortfolioEdit = props => (
     <Edit title={<PortfolioTitle />}  {...props}>
         <SimpleForm>
             <TextInput disabled source='id' />
-            <TextInput source='text' />
+            <TextInput resettable type='text' multiline source='text' />
         </SimpleForm>
     </Edit>
 );

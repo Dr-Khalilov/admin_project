@@ -7,10 +7,10 @@ import {
 export const ContactCreate = props => (
     <Create title='Create a contact' {...props}>
         <SimpleForm>
-            <TextInput source='name' />
-            <TextInput source='phone' />
-            <TextInput source='email' />
-            <TextInput source='message' />
+            <TextInput source='name' resettable />
+            <TextInput type='tel' resettable source='phone' />
+            <TextInput type='email' resettable source='email' />
+            <TextInput type='text' multiline resettable source='message' />
         </SimpleForm>
     </Create>
 );

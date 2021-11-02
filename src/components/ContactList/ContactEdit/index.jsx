@@ -9,10 +9,10 @@ const ContactTitle = ({ record }) => <span>Contact {record ? `${record.name}` : 
 export const ContactEdit = props => (
     <Edit title={<ContactTitle />}  {...props}>
         <SimpleForm>
-            <TextInput source='name' />
-            <TextInput source='phone' />
-            <TextInput source='email' />
-            <TextInput source='message' />
+            <TextInput source='name' resettable />
+            <TextInput type='tel' resettable source='phone' />
+            <TextInput type='email' resettable source='email' />
+            <TextInput type='text' multiline resettable source='message' />
         </SimpleForm>
     </Edit>
 );
