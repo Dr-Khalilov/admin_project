@@ -1,17 +1,18 @@
 import {
     Create,
     SimpleForm,
-    TextInput,
     AutocompleteArrayInput,
     ReferenceArrayInput,
 } from 'react-admin';
+import RichTextInput from 'ra-input-rich-text';
 import { CreateTag } from '../CreateTag';
 
 
 export const PostCreate = props => (
     <Create title='Create a Post' {...props}>
         <SimpleForm>
-            <TextInput multiline type='text' resettable source='text' />
+            <RichTextInput source='title' />
+            <RichTextInput source='text' />
             <ReferenceArrayInput label='Tags' source='tags' reference='tags'>
                 <AutocompleteArrayInput create={<CreateTag />} />
             </ReferenceArrayInput>

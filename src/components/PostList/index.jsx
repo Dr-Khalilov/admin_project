@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
     List,
     Datagrid,
@@ -8,13 +9,15 @@ import {
     SimpleList,
     DateField,
     ArrayField, ChipField,
-    SingleFieldList, ReferenceArrayField,
+    SingleFieldList,
+    RichTextField,
 } from 'react-admin';
 import { useMediaQuery } from '@material-ui/core';
+import SelectInput from '@material-ui/core/Select/SelectInput';
+import { ListActions } from '../ListActions';
 
 const postFilters = [
-    <TextInput source='q' label='Search' alwaysOn />,
-    <TextInput label='Text' source='text' defaultValue='Hello, World!' />,
+    <TextInput source='text' label='Search' alwaysOn />,
 ];
 
 
@@ -22,17 +25,18 @@ export const PostList = (props) => {
     const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
     return (
-        <List filters={postFilters} {...props}>
+        <List filters={postFilters} {...props} title='List of Posts'>
 
             {
                 isSmall ? (
-                    <SimpleList primaryText={record => record.name}
-                                secondaryText={record => record.text}
-                                tertiaryText={record => record.id} />
+                    <SimpleList primaryText={record => record.title}
+                                secondaryText={record => record.name}
+                                tertiaryText={record => record.text} />
                 ) : (
                     <Datagrid>
                         <TextField source='id' />
-                        <TextField multiline source='text' />
+                        <RichTextField source='title' />
+                        <RichTextField source='text' />
                         <ArrayField source='tags'>
                             <SingleFieldList>
                                 <ChipField source='name' />
@@ -47,3 +51,7 @@ export const PostList = (props) => {
         </List>
     );
 };
+
+// PostList.propTypes = {
+//     props: PostList.,
+// };

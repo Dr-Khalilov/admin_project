@@ -2,6 +2,7 @@ import {
     Create,
     SimpleForm,
     TextInput,
+    PasswordInput,
     CheckboxGroupInput,
     ReferenceArrayInput,
 } from 'react-admin';
@@ -11,7 +12,7 @@ export const UserCreate = props => (
         <SimpleForm>
             <TextInput source='name' resettable />
             <TextInput type='email' source='email' resettable />
-            <TextInput type='password' source='password' resettable />
+            <PasswordInput type='password' source='password' resettable />
             <ReferenceArrayInput reference='role' source='roles'>
                 <CheckboxGroupInput source='name' />
             </ReferenceArrayInput>

@@ -5,13 +5,14 @@ import {
     EditButton,
     DeleteButton,
     DateField,
+    RichTextField,
 } from 'react-admin';
 
 export const PortfolioList = props => (
     <List {...props}>
         <Datagrid>
             <TextField source='id' />
-            <TextField multiline source='text' />
+            <RichTextField source='text' />
             <DateField source='created_at' />
             <DateField source='updated_at' />
             <EditButton basePath='/portfolio' />

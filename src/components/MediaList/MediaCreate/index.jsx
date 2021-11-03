@@ -1,16 +1,16 @@
 import {
     Create,
     SimpleForm,
-    TextInput,
+    ImageInput,
+    ImageField,
 } from 'react-admin';
 
 export const MediaCreate = props => (
     <Create title='Create a media' {...props}>
         <SimpleForm>
-            <TextInput source='name' />
-            <TextInput source='fullName' />
-            <TextInput source='mimeType' />
-            <TextInput source='url' />
+            <ImageInput accept='image/*' multiple placeholder={<p>Drop your file here</p>} source='url'>
+                <ImageField source='url' title='name' />
+            </ImageInput>
         </SimpleForm>
     </Create>
 );

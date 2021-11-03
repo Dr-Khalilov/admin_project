@@ -1,13 +1,10 @@
-import {
-    Create,
-    SimpleForm,
-    TextInput,
-} from 'react-admin';
+import { Create, SimpleForm } from 'react-admin';
+import RichTextInput from 'ra-input-rich-text';
 
 export const PortfolioCreate = props => (
     <Create title='Create a portfolio' {...props}>
         <SimpleForm>
-            <TextInput multiline type='text' resettable source='text' />
+            <RichTextInput source='text' />
         </SimpleForm>
     </Create>
 );
