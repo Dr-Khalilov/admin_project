@@ -11,21 +11,33 @@ import {
     ArrayField, ChipField,
     SingleFieldList,
     RichTextField,
+    SearchInput, Pagination,
 } from 'react-admin';
-import { useMediaQuery } from '@material-ui/core';
-import SelectInput from '@material-ui/core/Select/SelectInput';
-import { ListActions } from '../ListActions';
+import { useMediaQuery, makeStyles } from '@material-ui/core';
+
+const PostPagination = props => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
+
+const PostPanel = ({ id, record, resource }) => (
+    <div dangerouslySetInnerHTML={{ __html: record.text }} />
+);
 
 const postFilters = [
-    <TextInput source='text' label='Search' alwaysOn />,
+    <SearchInput source='q' alwaysOn />,
+    <TextInput label='Title' source='title' defaultValue='' />,
+    <TextInput label='Text' source='text' defaultValue='' />,
 ];
 
+const useStyles = makeStyles({
+    row: {
+        backgroundColor: '#ccc',
+    },
+});
 
 export const PostList = (props) => {
     const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
-
+    const classes = useStyles();
     return (
-        <List filters={postFilters} {...props} title='List of Posts'>
+        <List filters={postFilters} {...props} pagination={<PostPagination />} title='List of Posts'>
 
             {
                 isSmall ? (
@@ -33,7 +45,7 @@ export const PostList = (props) => {
                                 secondaryText={record => record.name}
                                 tertiaryText={record => record.text} />
                 ) : (
-                    <Datagrid>
+                    <Datagrid expand={<PostPanel />} classes={{ row: classes.row }} optimized>
                         <TextField source='id' />
                         <RichTextField source='title' />
                         <RichTextField source='text' />
