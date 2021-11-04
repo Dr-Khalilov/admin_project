@@ -1,9 +1,4 @@
-import {
-    Create,
-    SimpleForm,
-    AutocompleteArrayInput,
-    ReferenceArrayInput,
-} from 'react-admin';
+import { AutocompleteArrayInput, Create, ReferenceArrayInput, SimpleForm } from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
 import { CreateTag } from '../CreateTag';
 

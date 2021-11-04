@@ -1,15 +1,7 @@
-import {
-    List,
-    Datagrid,
-    TextField,
-    EditButton,
-    DeleteButton,
-    DateField,
-    RichTextField,
-} from 'react-admin';
+import { Datagrid, DateField, DeleteButton, EditButton, List, RichTextField, TextField } from 'react-admin';
 
 export const PortfolioList = props => (
-    <List {...props}>
+    <List title='List of portfolios' {...props}>
         <Datagrid>
             <TextField source='id' />
             <RichTextField source='text' />

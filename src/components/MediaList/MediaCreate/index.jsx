@@ -1,9 +1,4 @@
-import {
-    Create,
-    SimpleForm,
-    ImageInput,
-    ImageField,
-} from 'react-admin';
+import { Create, ImageField, ImageInput, SimpleForm } from 'react-admin';
 
 export const MediaCreate = props => (
     <Create title='Create a media' {...props}>

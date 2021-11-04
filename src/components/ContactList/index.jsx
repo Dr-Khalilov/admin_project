@@ -1,18 +1,11 @@
-import {
-    List,
-    Datagrid,
-    TextField,
-    EditButton,
-    DeleteButton,
-    DateField, EmailField,
-} from 'react-admin';
+import { Datagrid, DateField, DeleteButton, EditButton, EmailField, List, TextField } from 'react-admin';
 
 export const ContactList = (props) => (
-    <List {...props}>
+    <List title='List of contacts' {...props}>
         <Datagrid>
             <TextField source='id' />
             <TextField source='name' />
-            <TextField  source='phone' />
+            <TextField source='phone' />
             <EmailField source='email' />
             <TextField multiline source='message' />
             <DateField source='created_at' />

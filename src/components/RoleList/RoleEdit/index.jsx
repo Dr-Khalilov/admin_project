@@ -1,8 +1,4 @@
-import {
-    Edit,
-    SimpleForm,
-    TextInput,
-} from 'react-admin';
+import { Edit, SimpleForm, TextInput } from 'react-admin';
 
 const RoleTitle = ({ record }) => <span>Role {record ? `${record.name}` : ''}</span>;
 

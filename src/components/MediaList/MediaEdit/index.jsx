@@ -1,8 +1,4 @@
-import {
-    Edit,
-    SimpleForm,
-    TextInput,
-} from 'react-admin';
+import { Edit, SimpleForm, TextInput } from 'react-admin';
 
 const MediaTitle = ({ record }) => <span>Media {record ? `${record.name}` : ''}</span>;
 

@@ -1,12 +1,4 @@
-import {
-    List,
-    Datagrid,
-    EditButton,
-    DeleteButton,
-    ImageField,
-    FileField, ArrayField,
-} from 'react-admin';
-import { MyUrlField } from '../MyUrlField';
+import { ArrayField, Datagrid, DeleteButton, EditButton, FileField, ImageField, List } from 'react-admin';
 
 export const MediaList = (props) => (
     <List {...props}>

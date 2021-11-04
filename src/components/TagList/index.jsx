@@ -1,16 +1,9 @@
-import {
-    List,
-    Datagrid,
-    TextField,
-    EditButton,
-    DeleteButton,
-    DateField,
-} from 'react-admin';
+import { Datagrid, DateField, DeleteButton, EditButton, List, TextField } from 'react-admin';
 
 
 export const TagList = (props) => {
     return (
-        <List {...props}>
+        <List title='List of Tags' {...props}>
             <Datagrid>
                 <TextField source='id' />
                 <TextField source='name' />

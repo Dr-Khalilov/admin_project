@@ -1,8 +1,4 @@
-import {
-    Edit,
-    SimpleForm,
-    TextInput,
-} from 'react-admin';
+import { Edit, SimpleForm, TextInput } from 'react-admin';
 
 const TagTitle = ({ record }) => <span>Tag {record ? `${record.name}` : ''}</span>;
 

@@ -1,12 +1,6 @@
 import { useState } from 'react';
-import { useCreateSuggestionContext, useCreate } from 'react-admin';
-import {
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    TextField,
-} from '@material-ui/core';
+import { useCreate, useCreateSuggestionContext } from 'react-admin';
+import { Button, Dialog, DialogActions, DialogContent, TextField } from '@material-ui/core';
 
 
 export const CreateTag = () => {

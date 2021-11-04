@@ -1,11 +1,4 @@
-import {
-    Create,
-    SimpleForm,
-    TextInput,
-    PasswordInput,
-    CheckboxGroupInput,
-    ReferenceArrayInput,
-} from 'react-admin';
+import { CheckboxGroupInput, Create, PasswordInput, ReferenceArrayInput, SimpleForm, TextInput } from 'react-admin';
 
 export const UserCreate = props => (
     <Create title='Create an User' {...props}>

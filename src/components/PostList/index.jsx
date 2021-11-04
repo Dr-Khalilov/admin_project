@@ -1,19 +1,19 @@
-import PropTypes from 'prop-types';
 import {
-    List,
+    ArrayField,
+    ChipField,
     Datagrid,
-    TextField,
-    EditButton,
-    DeleteButton,
-    TextInput,
-    SimpleList,
     DateField,
-    ArrayField, ChipField,
-    SingleFieldList,
+    DeleteButton,
+    EditButton,
+    List,
+    Pagination,
     RichTextField,
-    SearchInput, Pagination,
+    SearchInput,
+    SingleFieldList,
+    TextField,
+    TextInput,
 } from 'react-admin';
-import { useMediaQuery, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 const PostPagination = props => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
 
@@ -34,36 +34,23 @@ const useStyles = makeStyles({
 });
 
 export const PostList = (props) => {
-    const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
     const classes = useStyles();
     return (
         <List filters={postFilters} {...props} pagination={<PostPagination />} title='List of Posts'>
-
-            {
-                isSmall ? (
-                    <SimpleList primaryText={record => record.title}
-                                secondaryText={record => record.name}
-                                tertiaryText={record => record.text} />
-                ) : (
-                    <Datagrid expand={<PostPanel />} classes={{ row: classes.row }} optimized>
-                        <TextField source='id' />
-                        <RichTextField source='title' />
-                        <RichTextField source='text' />
-                        <ArrayField source='tags'>
-                            <SingleFieldList>
-                                <ChipField source='name' />
-                            </SingleFieldList>
-                        </ArrayField>
-                        <DateField source='created_at' />
-                        <DateField source='updated_at' />
-                        <EditButton basePath='/posts' />
-                        <DeleteButton basePath='/posts' />
-                    </Datagrid>
-                )}
+            <Datagrid expand={<PostPanel />} classes={{ row: classes.row }} optimized>
+                <TextField source='id' />
+                <RichTextField source='title' />
+                <RichTextField source='text' />
+                <ArrayField source='tags'>
+                    <SingleFieldList>
+                        <ChipField source='name' />
+                    </SingleFieldList>
+                </ArrayField>
+                <DateField source='created_at' />
+                <DateField source='updated_at' />
+                <EditButton basePath='/posts' />
+                <DeleteButton basePath='/posts' />
+            </Datagrid>
         </List>
     );
 };
-
-// PostList.propTypes = {
-//     props: PostList.,
-// };

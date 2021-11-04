@@ -1,11 +1,4 @@
-import {
-    List,
-    Datagrid,
-    TextField,
-    EditButton,
-    DeleteButton,
-    DateField,
-} from 'react-admin';
+import { Datagrid, DateField, DeleteButton, EditButton, List, TextField } from 'react-admin';
 
 export const RoleList = (props) => (
     <List {...props}>
