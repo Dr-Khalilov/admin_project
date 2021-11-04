@@ -28,8 +28,11 @@ const postFilters = [
 ];
 
 const useStyles = makeStyles({
-    row: {
-        backgroundColor: '#ccc',
+    table: {
+        backgroundColor: 'Lavender',
+    },
+    headerCell: {
+        backgroundColor: 'MistyRose',
     },
 });
 
@@ -37,7 +40,7 @@ export const PostList = (props) => {
     const classes = useStyles();
     return (
         <List filters={postFilters} {...props} pagination={<PostPagination />} title='List of Posts'>
-            <Datagrid expand={<PostPanel />} classes={{ row: classes.row }} optimized>
+            <Datagrid expand={<PostPanel />} classes={classes} optimized>
                 <TextField source='id' />
                 <RichTextField source='title' />
                 <RichTextField source='text' />

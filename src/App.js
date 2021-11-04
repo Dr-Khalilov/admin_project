@@ -1,7 +1,4 @@
 import { Admin, Resource } from 'react-admin';
-import PostIcon from '@material-ui/icons/Book';
-import UserIcon from '@material-ui/icons/Group';
-import ContactIcon from '@material-ui/icons/Person';
 import { authProvider } from './components/Auth';
 import { dataProvider } from './components/DataProvider';
 import { Dashboard } from './components/Dashboard';
@@ -27,13 +24,21 @@ import { RoleCreate } from './components/RoleList/RoleCreate';
 import { TagList } from './components/TagList';
 import { TagCreate } from './components/TagList/TagCreate';
 import { TagEdit } from './components/TagList/TagEdit';
+import { MyLayout } from './components/MyLayout';
+import { MyLoginPage } from './components/MyLoginPage';
+import { MyLogoutButton } from './components/MyLogoutButton';
+import { theme } from './components/Themes';
+
 
 export const App = () => (
-    <Admin catchAll={NotFound} dashboard={Dashboard} authProvider={authProvider}
+    <Admin theme={theme} loginPage={MyLoginPage} logoutButton={MyLogoutButton} layout={MyLayout}
+           catchAll={NotFound}
+           dashboard={Dashboard}
+           authProvider={authProvider}
            dataProvider={dataProvider}>
-        <Resource name='posts' list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
-        <Resource name='user' list={UserList} edit={UserEdit} create={UserCreate} icon={UserIcon} />
-        <Resource name='contact' list={ContactList} edit={ContactEdit} create={ContactCreate} icon={ContactIcon} />
+        <Resource name='posts' list={PostList} edit={PostEdit} create={PostCreate} />
+        <Resource name='user' list={UserList} edit={UserEdit} create={UserCreate} />
+        <Resource name='contact' list={ContactList} edit={ContactEdit} create={ContactCreate} />
         <Resource name='portfolio' list={PortfolioList} edit={PortfolioEdit} create={PortfolioCreate} />
         <Resource name='media' list={MediaList} edit={MediaEdit} create={MediaCreate} />
         <Resource name='role' list={RoleList} edit={RoleEdit} create={RoleCreate} />
